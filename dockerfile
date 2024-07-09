@@ -1,3 +1,5 @@
+# ......DOCKERFILE......
+
 # Use uma imagem base do Ubuntu 22.04
 FROM ubuntu:22.04
 
@@ -29,11 +31,3 @@ COPY .env .
 
 # Comando padrão para executar o app.py
 CMD ["python3", "app.py"]
-
-
-
-
-
-
-
-

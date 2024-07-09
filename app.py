@@ -1,6 +1,3 @@
-
-# app.py
-
 # app.py
 
 from trello import TrelloClient
