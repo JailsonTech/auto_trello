@@ -1,6 +1,3 @@
-
-# app.py
-
 # app.py
 
 from trello import TrelloClient
@@ -25,7 +22,28 @@ client = TrelloClient(
 card = client.get_card(TRELLO_CARD_ID)
 
 # Exibir informações do cartão
-print(f'Nome do cartão: {card.name}')
+print(f'\nNome do cartão: {card.name}')
 print(f'Descrição do cartão: {card.description}')
-print(f'ID do cartão: {card.id}')
 print(f'URL do cartão: {card.shortUrl}')
+
+# Verificar se há checklists no cartão
+if card.checklists:
+    # Iterar sobre os checklists do cartão
+    print("\n.............CHECKLISTS.............")
+    for checklist in card.checklists:
+        # Contar o número de itens no checklist
+        num_items = len(checklist.items)
+        print()
+        print(f'{checklist.name.upper()} - Total de itens: {num_items}')        
+        # Exibir os itens do checklist
+        for item in checklist.items:
+            print(f' - {item["name"]} ({item["state"]})')
+else:
+    print('Este cartão não possui nenhum checklist.')
+
+
+
+
+
+
+
