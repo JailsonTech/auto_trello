@@ -21,3 +21,4 @@
  
  # Comando padrão para executar o app.py
  CMD ["python3", "app.py"]
+ 
