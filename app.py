@@ -3,6 +3,7 @@
 from trello import TrelloClient
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -26,6 +27,13 @@ print(f'\nNome do cartão: {card.name}')
 print(f'Descrição do cartão: {card.description}')
 print(f'URL do cartão: {card.shortUrl}')
 
+# Mostrar a data do cartão, se existir
+if card.due_date:
+    formatted_due_date = card.due_date.strftime('%d/%m/%Y %H:%M:%S')
+    print(f'Data do cartão: {formatted_due_date}')
+else:
+    print('Este cartão não possui uma data definida.')
+
 # Verificar se há checklists no cartão
 if card.checklists:
     # Iterar sobre os checklists do cartão
@@ -40,6 +48,8 @@ if card.checklists:
             print(f' - {item["name"]} ({item["state"]})')
 else:
     print('Este cartão não possui nenhum checklist.')
+
+
 
 
 
