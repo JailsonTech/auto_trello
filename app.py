@@ -25,9 +25,9 @@ client = TrelloClient(
 card = client.get_card(TRELLO_CARD_ID)
 
 # Exibir informações do cartão
-print(f'\nNome do cartão: {card.name}')
-print(f'Descrição do cartão: {card.description}')
-print(f'URL do cartão: {card.shortUrl}')
+print(f'\nNOME DO CARTÃO: {card.name}')
+print(f'DESCRIÇÃO DO CARTÃO: {card.description}')
+print(f'URL DO CARTÃO: {card.shortUrl}')
 
 # Definir o fuso horário de Salvador
 salvador_timezone = pytz.timezone('America/Bahia')

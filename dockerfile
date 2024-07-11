@@ -1,4 +1,6 @@
- # imagem base do Ubuntu 22.04
+#..Dockerfile...
+
+# imagem base do Ubuntu 22.04
  FROM ubuntu:22.04
 
  # Atualiza o sistema e instale dependências
